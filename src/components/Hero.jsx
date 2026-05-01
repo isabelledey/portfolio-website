@@ -25,15 +25,16 @@ const Hero = () => {
         <div className="flex flex-wrap justify-center gap-gutter">
           <a
             href="#artifacts"
-            className="bg-gradient-to-r from-[#8B5CF6] to-[#6D28D9] text-white px-8 py-4 rounded-xl font-label-caps glow-violet hover:scale-105 transition-transform"
+            className="border border-primary/30 bg-surface-container-high/70 text-on-surface px-8 py-4 rounded-xl font-label-caps hover:border-primary/60 hover:bg-surface-container-high transition-all duration-300"
           >
             View Projects
           </a>
           <a
             href={`mailto:${siteContent.email}`}
-            className="border border-primary text-primary px-8 py-4 rounded-xl font-label-caps hover:bg-primary/10 transition-colors"
+            className="group relative overflow-hidden bg-gradient-to-r from-[#c9b2ff] via-[#a078ff] to-[#6D28D9] text-[#160f25] px-9 py-4 rounded-xl font-label-caps shadow-[0_18px_45px_rgba(109,40,217,0.35)] hover:scale-105 hover:shadow-[0_24px_60px_rgba(109,40,217,0.45)] transition-all duration-300"
           >
-            Contact Me
+            <span className="absolute inset-0 bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.45)_50%,transparent_80%)] translate-x-[-140%] transition-transform duration-700 group-hover:translate-x-[140%]"></span>
+            <span className="relative">Contact Me</span>
           </a>
         </div>
       </div>

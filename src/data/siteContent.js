@@ -2,7 +2,7 @@ export const siteContent = {
   brandName: "ATMOSPHERIC AI",
   leadTitle: "Lead Architect",
   leadSubtitle: "Atmospheric Intelligence",
-  introBadge: "INTRODUCING ISABELLE",
+  introBadge: "WELCOME TO MY PORTFOLIO",
   heroTitle: "Hi, I'm Isabelle.",
   heroSubtitle: "AI Full Stack Developer & Machine Learning Engineer.",
   heroDescription:
@@ -12,9 +12,9 @@ export const siteContent = {
     "I am a B.Sc. Computer Science student at HIT, specializing in ML pipelines and AI-driven web applications. My approach combines the rigor of computer science with the agility of modern full-stack development.",
   location: "Holon",
   phone: "+972 53-2323919",
-  email: "isabelle90098@gmail.com",
+  email: "isabelle.deychev@gmail.com",
   githubProfileUrl: "https://github.com/isabelledey",
-  linkedinUrl: "https://www.linkedin.com/in/isabelle90098",
+  linkedinUrl: "https://www.linkedin.com/in/isabelle-deychev",
   aboutStats: [
     { label: "AI Deployments", value: "15+" },
     { label: "ML Class Performant", value: "Top 5%" },
@@ -93,7 +93,7 @@ export const skillsSections = [
 
 export const timelineEntries = [
   {
-    period: "Dec 2024 - Present",
+    period: "Jan 2025 - Present",
     role: "AI Web Developer",
     organization: "Freelance Specialist",
     description:
@@ -101,9 +101,9 @@ export const timelineEntries = [
     active: true,
   },
   {
-    period: "2022 - 2023",
+    period: "Feb 2023 - Nov 2024 (1 year 10 months)",
     role: "Digital Forms Developer",
-    organization: "Migdal Insurance",
+    organization: "Migdal Insurances",
     description:
       "Streamlined insurance application workflows by developing dynamic, data-driven web forms, reducing customer processing time by 40%.",
     active: false,
@@ -119,8 +119,9 @@ export const featuredProjectDefinitions = [
     fallbackDescription:
       "Next-gen AI nutrition app leveraging computer vision for instant calorie tracking.",
     fallbackTopics: ["Generative AI", "React", "Computer Vision"],
-    fallbackSubtitle: "GitHub repository",
     imageName: "nutrisnap-ai.png",
+    imageAlt: "NutriSnap AI preview",
+    placeholderClassName: "from-[#25153f] via-[#3f2070] to-[#120d1f]",
   },
   {
     id: "ai-photo-editor",
@@ -130,7 +131,8 @@ export const featuredProjectDefinitions = [
     fallbackDescription:
       "High-fidelity image enhancement workflows for restoring and editing photos with AI-assisted tooling.",
     fallbackTopics: ["Image Processing", "Full Stack", "AI"],
-    fallbackSubtitle: "GitHub repository",
     imageName: "ai-face-enhancer.png",
+    imageAlt: "AI Photo Editor preview",
+    placeholderClassName: "from-[#120d1f] via-[#4d2c85] to-[#1c1830]",
   },
 ];

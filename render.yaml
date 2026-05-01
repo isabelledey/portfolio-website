@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: portfolio-website
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GITHUB_USERNAME
+        value: isabelledey
+      - key: GITHUB_TOKEN
+        sync: false

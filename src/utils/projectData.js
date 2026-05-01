@@ -37,8 +37,13 @@ export const createFeaturedProjects = (repositories = []) => {
           ? repository.topics
           : definition.fallbackTopics,
       url: definition.repoUrl,
-      subtitle: repository?.homepage || definition.fallbackSubtitle,
-      imagePath: buildProjectImagePath(definition.imageName),
+      imagePath:
+        repository?.social_preview_url ||
+        buildProjectImagePath(definition.imageName),
+      imageAlt: definition.imageAlt || `${definition.fallbackName} preview`,
+      placeholderClassName:
+        definition.placeholderClassName ||
+        "from-[#191326] via-[#342152] to-[#110d1b]",
       repoPath: definition.repoPath,
     };
   });

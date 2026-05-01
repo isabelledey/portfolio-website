@@ -24,7 +24,7 @@ const Navbar = () => {
       </div>
       <a
         href={`mailto:${siteContent.email}`}
-        className="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps hover:opacity-80 active:scale-95 transition-all"
+        className="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps hover:opacity-80 hover:scale-105 transition-all"
       >
         Contact
       </a>
