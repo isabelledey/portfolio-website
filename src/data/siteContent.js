@@ -1,5 +1,6 @@
 export const siteContent = {
- /** brandName: "Isabelle Deychev",
+  brandName: "Isabelle Deychev",
+  /** 
   leadTitle: "Lead Architect",
   leadSubtitle: "Atmospheric Intelligence", **/
   introBadge: "WELCOME TO MY PORTFOLIO",
