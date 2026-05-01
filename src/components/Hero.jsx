@@ -1,4 +1,5 @@
 import { siteContent } from "../data/siteContent";
+import ButterflyField from "./ButterflyField";
 
 const Hero = () => {
   return (
@@ -9,6 +10,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary-container/20 rounded-full blur-[120px]"></div>
       </div>
+      <ButterflyField />
       <div className="relative z-10 max-w-4xl">
         <span className="inline-block font-label-caps text-primary mb-sm tracking-widest">
           {siteContent.introBadge}
