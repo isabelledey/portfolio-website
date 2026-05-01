@@ -1,5 +1,5 @@
 import { siteContent } from "../data/siteContent";
-import ButterflyField from "./ButterflyField";
+import PlexusBackground from "./PlexusBackground";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 lg:w-[42rem] lg:h-[42rem] bg-secondary-container/20 rounded-full blur-[120px] lg:blur-[160px]"></div>
       </div>
-      <ButterflyField />
+      <PlexusBackground />
       <div className="relative z-10 w-full max-w-4xl lg:max-w-6xl">
         <span className="inline-block font-label-caps text-primary mb-sm tracking-widest">
           {siteContent.introBadge}
