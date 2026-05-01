@@ -1,65 +1,59 @@
-import { useEffect, useState } from 'react';
-import ProjectCard from './ProjectCard';
-
-const fallbackProjects = [
-  {
-    id: 'nutrisnap',
-    name: 'NutriSnap AI',
-    description: 'Next-gen AI nutrition app leveraging computer vision for instant calorie tracking.',
-    topics: ['Generative AI', 'React', 'Computer Vision'],
-    url: '#',
-    subtitle: 'Original atmospheric sample'
-  },
-  {
-    id: 'recipe-classifier',
-    name: 'ML Recipe Classifier',
-    description: 'Supervised learning pipeline achieving 98% accuracy in ingredient classification.',
-    topics: ['Python', 'Scikit-Learn', 'Pandas'],
-    url: '#',
-    subtitle: 'Original atmospheric sample'
-  },
-  {
-    id: 'face-enhancer',
-    name: 'AI Face Enhancer',
-    description: 'High-fidelity GAN-based tool for facial detail restoration in legacy photos.',
-    topics: ['LLMs', 'Full Stack', 'Next.js'],
-    url: '#',
-    subtitle: 'Original atmospheric sample'
-  }
-];
-
-const normalizeRepo = (repo) => ({
-  id: repo.id,
-  name: repo.name,
-  description: repo.description || 'A GitHub repository from the portfolio backend.',
-  topics: repo.topics?.length ? repo.topics : [repo.language || 'Repository'],
-  url: repo.html_url,
-  subtitle: repo.homepage || 'GitHub repository'
-});
+import { useEffect, useState } from "react";
+import ProjectCard from "./ProjectCard";
+import { createFeaturedProjects } from "../utils/projectData";
 
 const ProjectsGrid = () => {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState(() => createFeaturedProjects());
+  const [status, setStatus] = useState("idle");
 
   useEffect(() => {
+    let isActive = true;
+
     const fetchProjects = async () => {
+      setStatus("loading");
+
       try {
-        const response = await fetch('/api/projects');
+        const response = await fetch("/api/projects");
         if (!response.ok) {
-          throw new Error('GitHub API request failed');
+          let message = "GitHub API request failed";
+
+          try {
+            const errorPayload = await response.json();
+            if (errorPayload?.message) {
+              message = errorPayload.message;
+            }
+          } catch {
+            // Ignore JSON parsing failures and use the default message.
+          }
+
+          throw new Error(message);
         }
+
         const data = await response.json();
-        const normalized = data.map(normalizeRepo).slice(0, 6);
-        setProjects(normalized);
+
+        if (!isActive) {
+          return;
+        }
+
+        setProjects(createFeaturedProjects(data));
+        setStatus("success");
       } catch (error) {
         console.error(error);
-        setProjects(fallbackProjects);
-      } finally {
-        setLoading(false);
+
+        if (!isActive) {
+          return;
+        }
+
+        setProjects(createFeaturedProjects());
+        setStatus("error");
       }
     };
 
     fetchProjects();
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   return (
@@ -68,12 +62,20 @@ const ProjectsGrid = () => {
         <div className="flex items-end justify-between mb-lg">
           <div>
             <span className="font-label-caps text-primary">PORTFOLIO</span>
-            <h2 className="font-display text-h1 text-on-surface">Featured Artifacts</h2>
+            <h2 className="font-display text-h1 text-on-surface">
+              Featured Artifacts
+            </h2>
           </div>
           <div className="hidden md:block h-px flex-1 mx-lg bg-gradient-to-r from-violet-500/50 to-transparent"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {(loading ? fallbackProjects : projects).map((project) => (
+        {status === "error" ? (
+          <p className="mb-md text-sm text-on-surface-variant">
+            GitHub preview data is temporarily unavailable, so the cards are
+            showing curated fallback details.
+          </p>
+        ) : null}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>

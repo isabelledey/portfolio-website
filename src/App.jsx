@@ -1,11 +1,12 @@
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
-import Hero from './components/Hero';
-import About from './components/About';
-import ProjectsGrid from './components/ProjectsGrid';
-import SkillsMatrix from './components/SkillsMatrix';
-import Timeline from './components/Timeline';
-import Footer from './components/Footer';
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import ProjectsGrid from "./components/ProjectsGrid";
+import SkillsMatrix from "./components/SkillsMatrix";
+import Timeline from "./components/Timeline";
+import Footer from "./components/Footer";
+import { siteContent } from "./data/siteContent";
 
 function App() {
   return (
@@ -22,9 +23,13 @@ function App() {
           <Footer />
         </main>
       </div>
-      <button className="md:hidden fixed bottom-8 right-8 z-[100] w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center glow-violet">
+      <a
+        href={`mailto:${siteContent.email}`}
+        aria-label="Email Isabelle"
+        className="md:hidden fixed bottom-8 right-8 z-[100] w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center glow-violet"
+      >
         <span className="material-symbols-outlined">mail</span>
-      </button>
+      </a>
     </div>
   );
 }
