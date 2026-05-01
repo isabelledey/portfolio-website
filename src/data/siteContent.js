@@ -7,10 +7,10 @@ export const siteContent = {
   heroTitle: "Hi, I'm Isabelle.",
   heroSubtitle: "AI Full Stack Developer & Machine Learning Engineer.",
   heroDescription:
-    "I transform complex data into scalable, business-driven digital solutions using modern LLMs and deep learning. Building the next generation of atmospheric intelligence.",
-  aboutTitle: "Architecture of Mind",
+    "B.Sc. Computer Science student at HIT specializing in architecting end-to-end Machine Learning pipelines and AI-driven web applications.",
+  aboutTitle: "About Me",
   aboutDescription:
-    "I am a B.Sc. Computer Science student at HIT, specializing in ML pipelines and AI-driven web applications. My approach combines the rigor of computer science with the agility of modern full-stack development.",
+    "I have a strong foundation in data-oriented development and SQL from Migdal Technologies. Currently, I am mastering Neural Network architectures and deep learning frameworks to build complex predictive models.",
   location: "Holon",
   phone: "+972 53-2323919",
   email: "isabelle.deychev@gmail.com",
@@ -51,12 +51,12 @@ export const socialLinks = [
 
 export const skillsSections = [
   {
-    title: "AI & ML",
+    title: "Deep Learning",
     icon: "psychology",
     skills: [
-      { name: "PyTorch", level: "Expert" },
-      { name: "Scikit-Learn", level: "Expert" },
-      { name: "Hugging Face", level: "Advanced" },
+      { name: "PyTorch", level: "Advanced" },
+      { name: "Neural Networks", level: "Advanced" },
+      { name: "Deep Machine Learning", level: "Advanced" },
       { name: "TensorFlow", level: "Mid" },
     ],
   },
@@ -65,8 +65,9 @@ export const skillsSections = [
     icon: "data_object",
     skills: [
       { name: "React.js", level: "Expert" },
+      { name: "JavaScript", level: "Expert" },
       { name: "TypeScript", level: "Expert" },
-      { name: "Next.js", level: "Advanced" },
+      { name: "Next.js", level: "Expert" },
       { name: "Tailwind CSS", level: "Expert" },
     ],
   },
@@ -74,10 +75,10 @@ export const skillsSections = [
     title: "Backend",
     icon: "database",
     skills: [
-      { name: "Node.js", level: "Advanced" },
-      { name: "MsSQL", level: "Advanced" },
-      { name: "PostgreSQL", level: "Mid" },
-      { name: "FastAPI", level: "Advanced" },
+      { name: "Node.js", level: "Expert" },
+      { name: "MsSQL", level: "Expert" },
+      { name: "PostgreSQL", level: "Expert" },
+      { name: "Restful APIs", level: "Expert" },
     ],
   },
   {
@@ -87,7 +88,6 @@ export const skillsSections = [
       { name: "Docker", level: "Mid" },
       { name: "Vercel", level: "Expert" },
       { name: "GitHub Actions", level: "Advanced" },
-      { name: "Kubernetes", level: "Basic" },
     ],
   },
 ];
@@ -98,7 +98,7 @@ export const timelineEntries = [
     role: "AI Web Developer",
     organization: "Freelance Specialist",
     description:
-      "Architecting bespoke AI integrations for enterprise clients, focusing on vector database implementation and RAG (Retrieval-Augmented Generation) pipelines.",
+      "Mastering Neural Network architectures and PyTorch to build complex predictive models; engineered end-to-end data pipelines for Kaggle datasets.",
     active: true,
   },
   {
@@ -106,7 +106,7 @@ export const timelineEntries = [
     role: "Digital Forms Developer",
     organization: "Migdal Insurances",
     description:
-      "Streamlined insurance application workflows by developing dynamic, data-driven web forms, reducing customer processing time by 40%.",
+      "Architected complex digital data collection systems and optimized SQL queries to analyze large datasets while implementing rigorous server-side validation.",
     active: false,
   },
 ];

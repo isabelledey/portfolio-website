@@ -57,12 +57,12 @@ const ProjectsGrid = () => {
   }, []);
 
   return (
-    <section className="py-xl px-container-margin md:px-lg" id="artifacts">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-end justify-between mb-lg">
+    <section className="py-xl px-6 md:px-lg lg:px-12 xl:px-16" id="artifacts">
+      <div className="max-w-screen-xl mx-auto">
+        <div className="flex items-end justify-between mb-lg lg:mb-xl">
           <div>
             <span className="font-label-caps text-primary">PORTFOLIO</span>
-            <h2 className="font-display text-h1 text-on-surface">
+            <h2 className="font-display text-h1 lg:text-5xl text-on-surface">
               Featured Artifacts
             </h2>
           </div>
@@ -74,7 +74,7 @@ const ProjectsGrid = () => {
             showing curated fallback details.
           </p>
         ) : null}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter lg:gap-12">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

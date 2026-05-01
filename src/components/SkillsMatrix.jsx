@@ -3,15 +3,15 @@ import { skillsSections } from "../data/siteContent";
 const SkillsMatrix = () => {
   return (
     <section
-      className="py-xl px-container-margin md:px-lg max-w-7xl mx-auto"
+      className="py-xl px-6 md:px-lg lg:px-12 xl:px-16 max-w-screen-xl mx-auto"
       id="expertise"
     >
-      <h2 className="font-display text-h1 text-on-surface mb-lg text-center">
+      <h2 className="font-display text-h1 lg:text-5xl text-on-surface mb-lg lg:mb-xl text-center">
         Technical Stack
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter lg:gap-8">
         {skillsSections.map((section) => (
-          <div key={section.title} className="glass-card p-md rounded-2xl">
+          <div key={section.title} className="glass-card p-md lg:p-lg rounded-2xl">
             <div className="flex items-center gap-sm mb-md text-primary">
               <span className="material-symbols-outlined">{section.icon}</span>
               <h4 className="font-label-caps">{section.title}</h4>
