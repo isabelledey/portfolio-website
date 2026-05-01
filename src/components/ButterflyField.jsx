@@ -7,8 +7,8 @@ import {
 } from "framer-motion";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 
-const BUTTERFLY_COUNT = 46;
-const INTERACTION_RADIUS = 150;
+const BUTTERFLY_COUNT = 42;
+const INTERACTION_RADIUS = 118;
 
 const createSeededRandom = (seed) => {
   let current = seed;
@@ -41,19 +41,20 @@ const createButterflySwarm = (count) => {
       id: `butterfly-${index}`,
       xPct: x,
       yPct: y,
-      size: 8 + random() * 8,
-      opacity: 0.32 + random() * 0.42,
-      flapDuration: 1.35 + random() * 1.9,
+      size: 7 + random() * 6,
+      opacity: 0.18 + random() * 0.24,
+      flapDuration: 1.9 + random() * 2.2,
       flapDelay: random() * 1.8,
-      driftDuration: 2.8 + random() * 2.4,
-      floatRange: 8 + random() * 16,
-      floatSpeedX: 0.5 + random() * 0.7,
-      floatSpeedY: 0.45 + random() * 0.8,
+      driftDuration: 3.8 + random() * 3.1,
+      floatRange: 4 + random() * 8,
+      floatSpeedX: 0.22 + random() * 0.3,
+      floatSpeedY: 0.18 + random() * 0.28,
       floatPhaseX: random() * Math.PI * 2,
       floatPhaseY: random() * Math.PI * 2,
       radius: INTERACTION_RADIUS,
-      escapeForce: 34 + random() * 48,
-      rotateOffset: -12 + random() * 24,
+      escapeForce: 12 + random() * 18,
+      rotateOffset: -8 + random() * 16,
+      bodyRotation: -6 + random() * 12,
     };
   });
 };
@@ -79,17 +80,17 @@ const ButterflyParticle = memo(function ButterflyParticle({
     mass: 1,
   });
   const springX = useSpring(targetX, {
-    stiffness: 175,
-    damping: 18,
-    mass: 0.78,
+    stiffness: 120,
+    damping: 20,
+    mass: 0.95,
   });
   const springY = useSpring(targetY, {
-    stiffness: 175,
-    damping: 18,
-    mass: 0.78,
+    stiffness: 120,
+    damping: 20,
+    mass: 0.95,
   });
 
-  const tilt = useTransform(springX, [-55, 0, 55], [-16, 0, 16]);
+  const tilt = useTransform(springX, [-28, 0, 28], [-8, 0, 8]);
   const combinedX = useTransform([driftX, springX], ([idle, avoid]) => idle + avoid);
   const combinedY = useTransform([driftY, springY], ([idle, avoid]) => idle + avoid);
 
@@ -100,7 +101,7 @@ const ButterflyParticle = memo(function ButterflyParticle({
       butterfly.floatRange;
     const nextY =
       Math.cos(t * butterfly.floatSpeedY + butterfly.floatPhaseY) *
-      (butterfly.floatRange * 0.65);
+      (butterfly.floatRange * 0.48);
 
     idleX.set(nextX);
     idleY.set(nextY);
@@ -148,14 +149,14 @@ const ButterflyParticle = memo(function ButterflyParticle({
         marginTop: -(butterfly.size * 0.85),
         x: combinedX,
         y: combinedY,
-        rotate: tilt,
+        rotate: useTransform(tilt, (value) => value + butterfly.bodyRotation),
         opacity: butterfly.opacity,
       }}
     >
       <motion.div
         animate={{
-          y: [0, -2.5, 0, 1, 0],
-          scale: [1, 1.05, 0.97, 1.03, 1],
+          y: [0, -1.2, 0, 0.4, 0],
+          scale: [1, 1.02, 0.99, 1.01, 1],
         }}
         transition={{
           duration: butterfly.driftDuration,
@@ -169,14 +170,14 @@ const ButterflyParticle = memo(function ButterflyParticle({
           viewBox="0 0 48 32"
           className="h-full w-full overflow-visible"
           style={{
-            filter: "drop-shadow(0 0 8px #8B5CF6)",
+            filter: "drop-shadow(0 0 6px rgba(139,92,246,0.42))",
           }}
         >
           <motion.g
             animate={{
-              rotate: [18, -16, 18],
-              scaleY: [1, 0.78, 1],
-              x: [0, -0.8, 0],
+              rotate: [10, -8, 10],
+              scaleY: [1, 0.9, 1],
+              x: [0, -0.4, 0],
             }}
             transition={{
               duration: butterfly.flapDuration,
@@ -187,24 +188,24 @@ const ButterflyParticle = memo(function ButterflyParticle({
             style={{ originX: "24px", originY: "16px" }}
           >
             <path
-              d="M24 16C18 5 8 4 3 10c-2 3-1 8 3 10 5 3 12 2 18-4Z"
-              fill="rgba(221, 214, 254, 0.92)"
-              stroke="rgba(196, 181, 253, 0.35)"
-              strokeWidth="0.8"
+              d="M24 16C20 7.5 12 5.8 7.2 9.4c-2.8 2.2-2.3 6.5.8 8.4 4.5 2.8 10.3 2 16-1.8Z"
+              fill="rgba(233, 221, 255, 0.68)"
+              stroke="rgba(196, 181, 253, 0.18)"
+              strokeWidth="0.65"
             />
             <path
-              d="M23.5 17C18.5 18 14 22 12.8 27c-.5 2 1.1 3.6 3.1 3.2 3.4-.7 6.8-3.8 8.7-8.9Z"
-              fill="rgba(167, 139, 250, 0.72)"
-              stroke="rgba(196, 181, 253, 0.26)"
-              strokeWidth="0.8"
+              d="M23.7 17.1c-4.1 1.3-7.4 4.4-8.3 8-.4 1.7.9 2.9 2.5 2.5 2.8-.7 5.3-3.3 7.2-7.6Z"
+              fill="rgba(167, 139, 250, 0.42)"
+              stroke="rgba(196, 181, 253, 0.14)"
+              strokeWidth="0.65"
             />
           </motion.g>
 
           <motion.g
             animate={{
-              rotate: [-18, 16, -18],
-              scaleY: [1, 0.78, 1],
-              x: [0, 0.8, 0],
+              rotate: [-10, 8, -10],
+              scaleY: [1, 0.9, 1],
+              x: [0, 0.4, 0],
             }}
             transition={{
               duration: butterfly.flapDuration,
@@ -215,27 +216,27 @@ const ButterflyParticle = memo(function ButterflyParticle({
             style={{ originX: "24px", originY: "16px" }}
           >
             <path
-              d="M24 16C30 5 40 4 45 10c2 3 1 8-3 10-5 3-12 2-18-4Z"
-              fill="rgba(221, 214, 254, 0.92)"
-              stroke="rgba(196, 181, 253, 0.35)"
-              strokeWidth="0.8"
+              d="M24 16C28 7.5 36 5.8 40.8 9.4c2.8 2.2 2.3 6.5-.8 8.4-4.5 2.8-10.3 2-16-1.8Z"
+              fill="rgba(233, 221, 255, 0.68)"
+              stroke="rgba(196, 181, 253, 0.18)"
+              strokeWidth="0.65"
             />
             <path
-              d="M24.5 17C29.5 18 34 22 35.2 27c.5 2-1.1 3.6-3.1 3.2-3.4-.7-6.8-3.8-8.7-8.9Z"
-              fill="rgba(167, 139, 250, 0.72)"
-              stroke="rgba(196, 181, 253, 0.26)"
-              strokeWidth="0.8"
+              d="M24.3 17.1c4.1 1.3 7.4 4.4 8.3 8 .4 1.7-.9 2.9-2.5 2.5-2.8-.7-5.3-3.3-7.2-7.6Z"
+              fill="rgba(167, 139, 250, 0.42)"
+              stroke="rgba(196, 181, 253, 0.14)"
+              strokeWidth="0.65"
             />
           </motion.g>
 
           <path
-            d="M24 8.3c1.4 0 2.4 1.1 2.4 2.4v10.6c0 2.3-1.1 4.4-2.4 4.4s-2.4-2.1-2.4-4.4V10.7c0-1.3 1-2.4 2.4-2.4Z"
-            fill="rgba(245, 243, 255, 0.95)"
+            d="M24 9.2c1.1 0 1.9.8 1.9 1.9v9.9c0 2.1-.9 4-1.9 4s-1.9-1.9-1.9-4v-9.9c0-1.1.8-1.9 1.9-1.9Z"
+            fill="rgba(248, 245, 255, 0.72)"
           />
           <path
-            d="M23.7 8.2 20.5 4.3M24.3 8.2l3.2-3.9"
-            stroke="rgba(245, 243, 255, 0.8)"
-            strokeWidth="1"
+            d="M23.8 9.3 21.5 5.9M24.2 9.3l2.3-3.4"
+            stroke="rgba(245, 243, 255, 0.52)"
+            strokeWidth="0.8"
             strokeLinecap="round"
           />
         </svg>
