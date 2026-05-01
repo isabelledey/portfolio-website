@@ -1,7 +1,7 @@
 export const siteContent = {
-  brandName: "ATMOSPHERIC AI",
+ /** brandName: "Isabelle Deychev",
   leadTitle: "Lead Architect",
-  leadSubtitle: "Atmospheric Intelligence",
+  leadSubtitle: "Atmospheric Intelligence", **/
   introBadge: "WELCOME TO MY PORTFOLIO",
   heroTitle: "Hi, I'm Isabelle.",
   heroSubtitle: "AI Full Stack Developer & Machine Learning Engineer.",
