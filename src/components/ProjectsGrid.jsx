@@ -63,17 +63,17 @@ const ProjectsGrid = () => {
           <div>
             <span className="font-label-caps text-primary">PORTFOLIO</span>
             <h2 className="font-display text-h1 lg:text-5xl text-on-surface">
-              Featured Artifacts
+              My Projects
             </h2>
           </div>
           <div className="hidden md:block h-px flex-1 mx-lg bg-gradient-to-r from-violet-500/50 to-transparent"></div>
         </div>
-        {status === "error" ? (
+        {/**status === "error" ? (
           <p className="mb-md text-sm text-on-surface-variant">
             GitHub preview data is temporarily unavailable, so the cards are
             showing curated fallback details.
           </p>
-        ) : null}
+        ) : null **/}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter lg:gap-12">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
