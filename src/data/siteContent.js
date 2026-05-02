@@ -10,7 +10,7 @@ export const siteContent = {
     "B.Sc. Computer Science student at HIT specializing in architecting end-to-end Machine Learning pipelines and AI-driven web applications.",
   aboutTitle: "About Me",
   aboutDescription:
-    "With a strong foundation in data-oriented development and enterprise-grade SQL systems from my tenure at Migdal Insurances, I bring a unique, production-first perspective to AI. I specialize in architecting the 'plumbing' that powers modern applications—transforming complex, messy real-world data into clean, actionable datasets. Currently, I am expanding this expertise by mastering deep learning frameworks like PyTorch and exploring the nuances of Neural Network architectures to build predictive models that go beyond simple logic to provide intelligent, autonomous insights.",
+    "I’m a developer who enjoys the process of building things from the ground up—from architecting efficient data pipelines to deploying full-stack web applications. I started out working with production SQL databases and digital systems at Migdal Insurances, where I learned the importance of writing clean, reliable code. These days, I spend my time training Neural Networks, mastering PyTorch, and figuring out how to turn raw data into useful, intelligent models. I’m a student of computer science at HIT, constantly looking for the next problem to solve.",
   location: "Holon",
   phone: "+972 53-2323919",
   email: "isabelle.deychev@gmail.com",
