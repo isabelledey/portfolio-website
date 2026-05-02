@@ -131,7 +131,7 @@ export const featuredProjectDefinitions = [
     repoUrl: "https://github.com/isabelledey/AI-NutriSnap",
     fallbackName: "NutriSnap AI",
     fallbackDescription:
-      "Next-gen AI nutrition app leveraging computer vision for instant calorie tracking.",
+      "An intelligent nutritional platform utilizing next-generation AI and computer vision to process food imagery for real-time size estimation and caloric analysis. The application features a persistent history-tracking engine and delivers personalized meal recommendations based on individual user profiles.",
     fallbackTopics: ["Generative AI", "React", "Computer Vision"],
     imageName: "nutrisnap-ai.png",
     imageAlt: "NutriSnap AI preview",
@@ -143,10 +143,22 @@ export const featuredProjectDefinitions = [
     repoUrl: "https://github.com/isabelledey/ai-photo-editor",
     fallbackName: "AI Photo Editor",
     fallbackDescription:
-      "High-fidelity image enhancement workflows for restoring and editing photos with AI-assisted tooling.",
+      "An advanced AI-driven image processing suite designed for high-fidelity photo restoration and enhancement. The platform leverages generative AI models to perform complex pixel-level adjustments, including intelligent noise reduction, detail reconstruction, and automated aesthetic editing, providing professional-grade restoration workflows through an intuitive interface.",
     fallbackTopics: ["Image Processing", "Full Stack", "AI"],
     imageName: "ai-face-enhancer.png",
     imageAlt: "AI Photo Editor preview",
+    placeholderClassName: "from-[#120d1f] via-[#4d2c85] to-[#1c1830]",
+  },
+  {
+    id: "it-burns-when-ip",
+    repoPath: "isabelledey/it-burns-when-ip",
+    repoUrl: "https://github.com/isabelledey/it-burns-when-ip",
+    fallbackName: "It Burns When IP",
+    fallbackDescription:
+      "A computer networks project focused on creating multiple real-time chat environments using HTTP requests. Optimized for low-latency message delivery and scalable network protocols.",
+    fallbackTopics: ["Computer Networks", "socket.io", "HTTP"],
+    imageName: "it-burns-when-ip.png",
+    imageAlt: "It Burns When IP preview",
     placeholderClassName: "from-[#120d1f] via-[#4d2c85] to-[#1c1830]",
   },
   {
