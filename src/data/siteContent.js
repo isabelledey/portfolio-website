@@ -10,15 +10,15 @@ export const siteContent = {
     "B.Sc. Computer Science student at HIT specializing in architecting end-to-end Machine Learning pipelines and AI-driven web applications.",
   aboutTitle: "About Me",
   aboutDescription:
-    "I have a strong foundation in data-oriented development and SQL from Migdal Technologies. Currently, I am mastering Neural Network architectures and deep learning frameworks to build complex predictive models.",
+    "With a strong foundation in data-oriented development and enterprise-grade SQL systems from my tenure at Migdal Insurances, I bring a unique, production-first perspective to AI. I specialize in architecting the 'plumbing' that powers modern applications—transforming complex, messy real-world data into clean, actionable datasets. Currently, I am expanding this expertise by mastering deep learning frameworks like PyTorch and exploring the nuances of Neural Network architectures to build predictive models that go beyond simple logic to provide intelligent, autonomous insights.",
   location: "Holon",
   phone: "+972 53-2323919",
   email: "isabelle.deychev@gmail.com",
   githubProfileUrl: "https://github.com/isabelledey",
   linkedinUrl: "https://www.linkedin.com/in/isabelle-deychev",
   aboutStats: [
-    { label: "AI Deployments", value: "15+" },
-    { label: "ML Class Performant", value: "Top 5%" },
+    { label: "Computer Science GPA", value: "90" },
+    { label: "Created Projects", value: "15+" },
   ],
 };
 
