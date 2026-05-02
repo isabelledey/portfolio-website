@@ -63,8 +63,13 @@ const ProjectsGrid = () => {
           <div>
             <span className="font-label-caps text-primary">PORTFOLIO</span>
             <h2 className="font-display text-h1 lg:text-5xl text-on-surface">
-              My Projects
+              My Main Projects
             </h2>
+            <br />
+            <p>
+              For all of the projects I've worked on, check out my GitHub
+              profile!
+            </p>
           </div>
           <div className="hidden md:block h-px flex-1 mx-lg bg-gradient-to-r from-violet-500/50 to-transparent"></div>
         </div>
