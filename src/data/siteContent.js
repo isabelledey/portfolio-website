@@ -149,4 +149,16 @@ export const featuredProjectDefinitions = [
     imageAlt: "AI Photo Editor preview",
     placeholderClassName: "from-[#120d1f] via-[#4d2c85] to-[#1c1830]",
   },
+  {
+    id: "firebase-auth-tracker",
+    repoPath: "isabelledey/firebase-auth-tracker",
+    repoUrl: "https://github.com/isabelledey/firebase-auth-tracker",
+    fallbackName: "Firebase Auth Tracker",
+    fallbackDescription:
+      "A secure implementation for tracking anonymous sign-in counts using Firebase, optimized for seamless user onboarding and data persistence.",
+    fallbackTopics: ["Firebase", "Authentication", "Backend", "Angular"],
+    imageName: "firebase-auth-tracker.png",
+    imageAlt: "Firebase Auth Tracker preview",
+    placeholderClassName: "from-[#120d1f] via-[#4d2c85] to-[#1c1830]",
+  },
 ];
