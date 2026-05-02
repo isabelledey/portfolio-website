@@ -82,6 +82,19 @@ export const skillsSections = [
     ],
   },
   {
+    title: "Programming Languages",
+    icon: "data_object",
+    skills: [
+      { name: "JavaScript", level: "Expert" },
+      { name: "TypeScript", level: "Expert" },
+      { name: "Python", level: "Expert" },
+      { name: "C", level: "Advanced" },
+      { name: "C++", level: "Advanced" },
+      { name: "C#", level: "Advanced" },
+      { name: "Java", level: "Advanced" },
+    ],
+  },
+  {
     title: "Tools",
     icon: "build",
     skills: [

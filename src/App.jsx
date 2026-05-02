@@ -12,8 +12,9 @@ function App() {
   return (
     <div className="dark">
       <Navbar />
-      <div className="lg:ml-80 bg-gradient-mesh min-h-screen">
-        <Sidebar />
+      <div className="bg-gradient-mesh min-h-screen">
+      {/* add lg:ml-80 to main when sidebar is added back in */}
+        {/* <Sidebar /> */}
         <main>
           <Hero />
           <About />
