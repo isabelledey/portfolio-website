@@ -5,7 +5,7 @@ export const siteContent = {
   leadSubtitle: "Atmospheric Intelligence", **/
   introBadge: "WELCOME TO MY PORTFOLIO",
   heroTitle: "Hi, I'm Isabelle.",
-  heroSubtitle: "AI Full Stack Developer & Machine Learning Engineer.",
+  heroSubtitle: "Full Stack Developer & Machine Learning Engineer.",
   heroDescription:
     "B.Sc. Computer Science student at HIT specializing in architecting end-to-end Machine Learning pipelines and AI-driven web applications.",
   aboutTitle: "About Me",
